@@ -1,199 +1,143 @@
+<div align="center">
+
+# 🔥 FireLoop
+
+### The independent proving ground for Physical AI
+
+**We build software that tests robots.**
+
+![NVIDIA Inception](https://img.shields.io/badge/NVIDIA-Inception%20Member-76B900?logo=nvidia&logoColor=white)
+![Isaac Sim](https://img.shields.io/badge/NVIDIA-Isaac%20Sim-76B900?logo=nvidia&logoColor=white)
+![ROS](https://img.shields.io/badge/ROS-Integrated-22314E?logo=ros&logoColor=white)
+![Focus](https://img.shields.io/badge/Focus-Mobile%20Robots-orange)
+
+[Website](https://fireloop.netlify.app/) · [Contact us](mailto:build@fireloop.ai)
+
+</div>
+
 ---
 
 ## About FireLoop
 
-FireLoop builds software that tests robots.
+As Physical AI moves from controlled demonstrations into warehouses and other real-world environments, testing becomes increasingly difficult. Real deployments introduce people, changing lighting, sensor noise, obstacles, surface conditions, operational constraints, and edge cases that are hard to reproduce consistently.
 
-As Physical AI moves from controlled demonstrations into warehouses and other real-world environments, testing becomes increasingly difficult. Real deployments introduce people, changing lighting, sensor noise, obstacles, surface conditions, operational constraints, and edge cases that are difficult to reproduce consistently.
+**FireLoop exists to make those conditions testable before deployment.**
 
-FireLoop exists to make those conditions testable before deployment.
-
-Our mission is to bring the same independent, automated, and repeatable testing discipline that transformed software engineering to Physical AI.
+Our mission is to bring the independent, automated, and repeatable testing discipline that transformed software engineering to Physical AI.
 
 ## FireLoop Forge
 
-**Forge** is FireLoop's simulation-based evaluation platform for Physical AI.
+**Forge** is our simulation-based evaluation platform for Physical AI. It creates a physically calibrated digital twin of a deployment environment, connects the robot's existing autonomy stack, generates realistic scenarios and edge cases, runs approved evaluations, and produces measurable, replayable results.
 
-Forge creates a physically calibrated digital twin of a deployment environment, connects the robot's existing autonomy stack, generates realistic test scenarios and edge cases, executes approved evaluations, and produces measurable, replayable results.
-
-The goal is simple:
-
-> Find where the robot fails in simulation — before it fails in the real world.
+> **Find where the robot fails in simulation, before it fails in the real world.**
 
 ### How Forge works
 
-**01 — Describe the environment**
+| Step | What happens |
+| :---: | --- |
+| **01** | **Describe the environment.** Describe a warehouse, deployment site, or operational scenario using natural language or site information. |
+| **02** | **Build the digital twin.** Forge constructs the environment, configures the robot, models its physics, and calibrates cameras, LiDAR, and other sensors. |
+| **03** | **Define the tests.** Describe expected robot behavior in plain English. Forge converts requirements into executable scenarios and proposes additional edge cases. Engineers review and approve them before execution. |
+| **04** | **Run the robot.** The robot's existing autonomy software runs against the simulated environment, with no simulation-specific decision-making stack required. |
+| **05** | **Get the evidence.** Every evaluation produces measurable results that engineers can inspect, reproduce, and use to improve the next release. |
 
-Describe a warehouse, deployment site, or operational scenario using natural language or site information.
+<details>
+<summary><b>Edge-case dimensions Forge can vary</b></summary>
 
-**02 — Build the digital twin**
+<br>
 
-Forge constructs the environment, configures the robot, models its physics, and calibrates cameras, LiDAR, and other sensors.
+- Robot speed
+- Lighting
+- Sensor noise
+- Occlusion
+- Surface conditions
+- Dynamic obstacles
+- Human interaction
+- Environmental variation
 
-**03 — Define the tests**
+</details>
 
-Describe the expected robot behavior in plain English.
+<details>
+<summary><b>What every evaluation can produce</b></summary>
 
-Forge converts those requirements into executable scenarios and proposes additional edge cases across conditions such as:
+<br>
 
-* Robot speed
-* Lighting
-* Sensor noise
-* Occlusion
-* Surface conditions
-* Dynamic obstacles
-* Human interaction
-* Environmental variation
+- Pass/fail verdicts
+- Safety margins
+- Failure conditions
+- ROS-level diagnostic evidence
+- Root-cause analysis
+- Regression trends
+- Deterministic replay information
 
-Engineers review and approve the scenarios before execution.
-
-**04 — Run the robot**
-
-The robot's existing autonomy software runs against the simulated environment without requiring a simulation-specific decision-making stack.
-
-**05 — Get the evidence**
-
-Every evaluation produces measurable results that can include:
-
-* Pass/fail verdicts
-* Safety margins
-* Failure conditions
-* ROS-level diagnostic evidence
-* Root-cause analysis
-* Regression trends
-* Deterministic replay information
-
-The result is evidence engineers can inspect, reproduce, and use to improve the next release.
+</details>
 
 ---
 
 ## Who We Build For
 
-### Robot OEMs
-
-Evaluate releases against real deployment conditions before shipping them to customers.
-
-Use Forge to:
-
-* Test release candidates
-* Detect regressions
-* Reproduce customer-site conditions
-* Investigate failures
-* Validate challenging edge cases
-* Generate evidence before field pilots
-
-### Robot Deployers
-
-Understand how a robot will behave inside your environment before committing to a full deployment.
-
-Evaluate robots against:
-
-* Your aisles
-* Your docks
-* Your operating conditions
-* Your traffic patterns
-* Your safety requirements
-* Your edge cases
-
-### System Integrators & Field Teams
-
-Build repeatable evaluations around customer environments and use measurable results instead of relying only on controlled demonstrations.
-
----
+| Audience | How Forge helps |
+| --- | --- |
+| **Robot OEMs** | Test release candidates, detect regressions, reproduce customer-site conditions, investigate failures, validate edge cases, and generate evidence before field pilots. |
+| **Robot Deployers** | Understand how a robot will behave in your aisles, docks, traffic patterns, operating conditions, and safety requirements before committing to full deployment. |
+| **System Integrators & Field Teams** | Build repeatable evaluations around customer environments and rely on measurable results instead of controlled demonstrations alone. |
 
 ## Current Focus
 
-FireLoop Forge is currently focused on mobile robots that move goods, including:
+Forge is currently focused on **mobile robots that move goods**:
 
-* Autonomous forklifts
-* Autonomous mobile robots (AMRs)
-* Pallet movers
-* Tuggers
-* Goods-to-person robots
+- Autonomous forklifts
+- Autonomous mobile robots (AMRs)
+- Pallet movers
+- Tuggers
+- Goods-to-person robots
 
 ---
 
 ## Technology
 
-FireLoop's simulation and evaluation stack is built around technologies including:
-
-| Area                        | Technology                                |
-| --------------------------- | ----------------------------------------- |
-| Robotics Simulation         | NVIDIA Isaac Sim                          |
-| Robot Learning & Evaluation | NVIDIA Isaac Lab                          |
-| Simulation Platform         | NVIDIA Omniverse                          |
-| Robot Integration           | ROS                                       |
-| Environment Modeling        | Physically calibrated digital twins       |
-| Evaluation                  | Scenario-based automated testing          |
-| Analysis                    | Failure diagnostics & regression analysis |
-| Compute                     | GPU-accelerated simulation                |
+| Area | Technology |
+| --- | --- |
+| Robotics simulation | NVIDIA Isaac Sim |
+| Robot learning & evaluation | NVIDIA Isaac Lab |
+| Simulation platform | NVIDIA Omniverse |
+| Robot integration | ROS |
+| Environment modeling | Physically calibrated digital twins |
+| Evaluation | Scenario-based automated testing |
+| Analysis | Failure diagnostics & regression analysis |
+| Compute | GPU-accelerated simulation |
 
 FireLoop is a member of the **NVIDIA Inception** program.
 
----
-
 ## Safety & Evaluation Standards
 
-Our evaluation workflows reference industry standards relevant to autonomous industrial vehicles and mobile robots, including:
+Our evaluation workflows reference industry standards for autonomous industrial vehicles and mobile robots:
 
-* **ISO 3691-4** — Driverless industrial trucks and their systems
-* **ANSI B56.5** — Driverless, automatic guided industrial vehicles
-* **VDA 5050** — Communication between mobile robots and fleet-control systems
+| Standard | Scope |
+| --- | --- |
+| **ISO 3691-4** | Driverless industrial trucks and their systems |
+| **ANSI B56.5** | Driverless, automatic guided industrial vehicles |
+| **VDA 5050** | Communication between mobile robots and fleet-control systems |
 
-Standards provide the requirements.
-
-Forge turns those requirements into repeatable simulation-based evaluation.
+*Standards provide the requirements. Forge turns them into repeatable, simulation-based evaluation.*
 
 ---
 
 ## Engineering Principles
 
-### Test the real autonomy stack
-
-The software making decisions in deployment should be the software being evaluated.
-
-Forge models the environment, vehicle, and sensors while the robot's autonomy stack remains responsible for its own decisions.
-
-### Humans approve the test
-
-AI can accelerate scenario creation, environment generation, and analysis.
-
-Engineers remain responsible for reviewing the environment, approving scenarios, and defining what constitutes acceptable behavior.
-
-### Evidence over assumptions
-
-A successful evaluation should provide more than a green checkmark.
-
-Results should include the measurements, conditions, configuration, and evidence required to understand why a test passed or failed.
-
-### Reproduce every failure
-
-A failure that cannot be reproduced is difficult to fix.
-
-Forge preserves the conditions required to replay scenarios and compare behavior across software releases.
-
-### Test continuously
-
-Robot behavior can change whenever autonomy software changes.
-
-Evaluation should therefore be part of the release lifecycle rather than a one-time activity before deployment.
+1. **Test the real autonomy stack.** The software making decisions in deployment should be the software being evaluated. Forge models the environment, vehicle, and sensors while the autonomy stack makes its own decisions.
+2. **Humans approve the test.** AI accelerates scenario creation, environment generation, and analysis. Engineers review the environment, approve scenarios, and define acceptable behavior.
+3. **Evidence over assumptions.** Results include the measurements, conditions, configuration, and evidence needed to understand why a test passed or failed, not just a green checkmark.
+4. **Reproduce every failure.** A failure that can't be reproduced is hard to fix. Forge preserves the conditions needed to replay scenarios and compare behavior across releases.
+5. **Test continuously.** Robot behavior can change whenever autonomy software changes, so evaluation belongs in the release lifecycle, not just before deployment.
 
 ---
 
 ## What You'll Find Here
 
-The FireLoop GitHub organization will host engineering projects related to areas such as:
+This organization will host engineering projects across:
 
-* Physical AI evaluation
-* Robotics simulation
-* NVIDIA Isaac Sim
-* NVIDIA Isaac Lab
-* ROS integrations
-* Scenario generation
-* Robot testing infrastructure
-* Simulation tooling
-* Reference integrations
-* Developer examples
+`Physical AI evaluation` · `Robotics simulation` · `NVIDIA Isaac Sim` · `NVIDIA Isaac Lab` · `ROS integrations` · `Scenario generation` · `Robot testing infrastructure` · `Simulation tooling` · `Reference integrations` · `Developer examples`
 
 More engineering resources will be published as the FireLoop platform evolves.
 
@@ -203,11 +147,10 @@ More engineering resources will be published as the FireLoop platform evolves.
 
 If you're developing, integrating, evaluating, or deploying autonomous mobile robots, we'd like to hear about the scenarios that are hardest for your robots to handle.
 
-**Website:** `<WEBSITE_URL>`
+🌐 **Website:** [fireloop.netlify.app](https://fireloop.netlify.app/)
+📧 **Email:** [build@fireloop.ai](mailto:build@fireloop.ai)
 
-**Email:** [build@fireloop.ai](mailto:build@fireloop.ai)
-
----
+<br>
 
 <p align="center">
   <strong>FireLoop AI</strong><br/>
